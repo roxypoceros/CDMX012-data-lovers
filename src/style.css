@@ -8,17 +8,14 @@
 header{
   background-color: rgb(43, 156, 226);
   height: 120px;
-  display: flex; 
-  align-items: center;
-  gap: 30%;
-  
-
+  display: flex; /*como se va a mostrar*/
+  align-items: center; /*centrado de forma vertical*/
+  gap: 30%; /*espacio entre el logo y el texto*/
 }
 
 #logo{
     width: auto;
-    height: 120px;
-        
+    height: 120px;     
   }
 
 
@@ -26,24 +23,24 @@ h1{
   font-family: 'Wendy One', sans-serif;
   color: white;
   font-size: 3rem;
-  letter-spacing: .2rem;
+  letter-spacing: .2rem; /*espacio entre las letras*/
   
 }
 
-
-
 h2{
   font-family: 'Catamaran', sans-serif;
+  text-align: center;
 }
 h3{
   font-family: 'Hind Vadodara', sans-serif;
+  text-align: center;
 }
 
 /*Carrusel*/
 #contenedorItemCarrusel{
   /*Su alto es el de los elementos que contiene*/
   height: 519px;
- 
+  text-align: center; 
   overflow: hidden;
 }
 
@@ -77,10 +74,13 @@ a {
 }
 
 
+#allFilms{
+  text-align: center;
+  
+}
 
 
-
-.footer {
+  .footer {
   position: fixed;
   left: 0;
   bottom: 0;
