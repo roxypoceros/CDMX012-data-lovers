@@ -3,11 +3,13 @@
 
 //manipulacion del DOM template string
 export let mostrarFilm = (film) => {
-  return `<img src="${film.poster}">
-          <h2>${film.title}</h2>
-          <h3>${film.director}</h3>
-          <h3>${film.producer}</h3>
-          <h3>${film.release_date}</h3>`
+  return `<article class = "peli">
+          <img src="${film.poster}">
+          <h2> ${film.title}</h2>
+          <h3>Director: ${film.director}</h3>
+          <h3>Producer: ${film.producer}</h3>
+          <h3>${film.release_date} </h3>
+          </article>`
 }
 
 
