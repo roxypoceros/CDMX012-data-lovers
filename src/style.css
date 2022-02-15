@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Hind+Vadodara&family=Wendy+One&display=swap');
+/*Selector Universal*/
 *{
     padding: 0px;
     margin: 0px;
@@ -8,17 +9,15 @@
 header{
   background-color: rgb(43, 156, 226);
   height: 120px;
-  display: flex; 
-  align-items: center;
-  gap: 30%;
-  
-
+  display: flex; /*como se va a mostrar*/
+  align-items: center; /*centrado de forma vertical*/
+  gap: 30%; /*espacio entre el logo y el texto*/
 }
 
 #logo{
     width: auto;
     height: 120px;
-        
+    
   }
 
 
@@ -26,24 +25,41 @@ h1{
   font-family: 'Wendy One', sans-serif;
   color: white;
   font-size: 3rem;
+  letter-spacing: .2rem; /*espacio entre las letras*/
+  
+}
+
+h2{
+  font-family: 'Catamaran', sans-serif;
+  text-align: center;
+  color: rgb(18, 85, 126);
+}
+
+h3{
+  font-family: 'Hind Vadodara', sans-serif;
+  color: rgb(18, 85, 126);
+
+  
+}
+h4{
+  font-family: 'Hind Vadodara', sans-serif;
+  text-align: center;
+  font-size: .8rem;
   letter-spacing: .2rem;
   
 }
 
+#TextoStudioGhibli{
+  text-align: justify;
+  margin: 40px;
 
-
-h2{
-  font-family: 'Catamaran', sans-serif;
-}
-h3{
-  font-family: 'Hind Vadodara', sans-serif;
 }
 
 /*Carrusel*/
 #contenedorItemCarrusel{
   /*Su alto es el de los elementos que contiene*/
   height: 519px;
- 
+  text-align: center; 
   overflow: hidden;
 }
 
@@ -68,19 +84,45 @@ h3{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 5%;
   height: 100%;
+  
 }
 a {
   text-decoration: none;
   color: white;
+  font-size: x-large;
+  text-shadow: 3px 3px 1px  gray;
+
+}
+
+/*.seccionBotones{
+  width: 30%;
+  text-align: center;
+  background-color: brown;
+}  float: left;*/
+
+
+#allFilms{
+  display:flex;
+  flex-wrap: wrap;
+
+}
+
+
+.peli{
+  flex: 1 0 20%;
+  text-align: center;
+  margin: 30px;
+  padding: 10px;
+  color: rgb(18, 85, 126);
 }
 
 
 
 
 
-.footer {
+  .footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -89,8 +131,22 @@ a {
   background-color: rgb(43, 156, 226);
   color: white;
   text-align: center;
+  align-items: center;
   padding: 1%;
 }
 
 
 
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .seccionBotones, #contenedorItemCarrusel{
+    width: 100%;
+  }
+}
+
+/*For screen The width is 100%, when the viewport is 800px or smaller 
+@media screen and (max-width: 800px) {
+  #contenedorItemCarrusel, #allFilms, #TextoStudioGhibli, .footer {
+    width: 100%;  
+  }
+}*/
