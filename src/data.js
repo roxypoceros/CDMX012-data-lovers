@@ -1,6 +1,5 @@
 // estas funciones son de ejemplo
 // controlar toda la logica del programa 
-
 //manipulacion del DOM template string
 export let mostrarFilm = (film) => {
   return `<article class = "peli">
@@ -10,13 +9,13 @@ export let mostrarFilm = (film) => {
           <h3>Producer: ${film.producer}</h3>
           <h3>${film.release_date} </h3>
           </article>`
+};
+
+export let mostrarDirector = (films)  => {
+
+  return `<option>${films.director}</option>`;
+/*films.forEach(element => {
+  console.log(element.director);
+});*/
+
 }
-
-
-/*let filmsGhibli = films.map(function recorrer (elemento){ 
-return (elemento.title)
-})*/
-
-/*films.forEach (function recorrerTitle (elemento) {
-  console.log (elemento.title)
-  });*/

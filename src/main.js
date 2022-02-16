@@ -5,11 +5,14 @@
 
 import data from './data/ghibli/ghibli.js';
 import { mostrarFilm } from './data.js';
+import { mostrarDirector } from './data.js';
 
 
 const allFilms = document.getElementById("allFilms");
 allFilms.innerHTML= data.films.map (mostrarFilm).join(" ")
 
+const director = document.getElementById("director");
+director.innerHTML= data.films.map(mostrarDirector)
 
 //const pelicula= document.getElementById('pelicula');
 //pelicula.innerHTML=example("en un futuro eso sera la data")
