@@ -58,7 +58,8 @@ h4{
 /*Carrusel*/
 #contenedorItemCarrusel{
   /*Su alto es el de los elementos que contiene*/
-  height: 519px;
+  height: 400px;
+  margin: 30px;
   text-align: center; 
   overflow: hidden;
 }
@@ -119,9 +120,6 @@ a {
 }
 
 
-
-
-
   .footer {
   position: fixed;
   left: 0;
@@ -139,7 +137,7 @@ a {
 
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
-  .seccionBotones, #contenedorItemCarrusel{
+  .peli, #contenedorItemCarrusel, #allFilms{
     width: 100%;
   }
 }

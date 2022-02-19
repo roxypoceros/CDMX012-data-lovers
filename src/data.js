@@ -11,11 +11,14 @@ export let mostrarFilm = (film) => {
           </article>`
 };
 
-export let mostrarDirector = (films)  => {
 
-  return `<option>${films.director}</option>`;
-/*films.forEach(element => {
-  console.log(element.director);
-});*/
+//Funcion del select por director
+export let filtroDirectores = (films,director) => {
+  const arrayDirector = films.filter(film => film.director == director);
+  return arrayDirector; 
+};
 
-}
+
+
+
+
