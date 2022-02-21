@@ -9,36 +9,35 @@ import { filtroDirectores } from './data.js';
 
 const films = data.films;
 let director = "";
-let html = ` ` ;
+let html = " " ;
 
 //Imprime en el HTML la data de las 20 peliculas del Studio Ghibli
 const allFilms = document.getElementById("allFilms");
 allFilms.innerHTML= data.films.map (mostrarFilm).join(" ");
 
 //Filtrado por director
-document.querySelector('#filtrarDirector').addEventListener('change', () =>{
+const filtrarDirector = document.querySelector('#filtrarDirector')
+filtrarDirector.addEventListener('change', () =>{ 
 director = document.querySelector('#filtrarDirector').value; 
+//console.log (filtroDirectores (films,director))
 const allFilms = document.getElementById("allFilms");
+allFilms.innerHTML = " ";
+
 for(let i=0; i<filtroDirectores(films,director).length; i++){
-  console.log(filtroDirectores(films,director)[i])
-      let peliDirectores = `<article class = "peli">
+  //console.log(filtroDirectores(films,director)[i])
+    let peliDirectores = `<article class = "peli">
           <img src="${filtroDirectores(films,director)[i].poster}">
           <h2> ${filtroDirectores(films,director)[i].title}</h2>
           <h3>Director: ${filtroDirectores(films,director)[i].director}</h3>
           <h3>Producer: ${filtroDirectores(films,director)[i].producer}</h3>
           <h3>${filtroDirectores(films,director)[i].release_date} </h3>
           </article>`
-          html += peliDirectores;
+         /* html += peliDirectores;*/
+         allFilms.innerHTML += peliDirectores;
 }
-allFilms.innerHTML= html
 
 //console.log(html)
 //console.log(allFilms)
 //console.log(director)
 //console.log (filtroDirectores (films,director))
- 
-})
-
-
-
-
+});
