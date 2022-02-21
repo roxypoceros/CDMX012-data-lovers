@@ -17,8 +17,3 @@ export let filtroDirectores = (films,director) => {
   const arrayDirector = films.filter(film => film.director == director);
   return arrayDirector; 
 };
-
-
-
-
-
