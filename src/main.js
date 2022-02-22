@@ -3,17 +3,89 @@
 
 // Ser la salida y la manipulacion del DOM
 
-import data from './data/ghibli/ghibli.js';
-import { mostrarFilm } from './data.js';
-import { mostrarDirector } from './data.js';
+import data from "./data/ghibli/ghibli.js";
+import { mostrarFilm } from "./data.js";
+import { filtroDirectores } from "./data.js";
+import { filtroProductores } from "./data.js";
+import { filtroFecha } from "./data.js";
 
+const films = data.films;
+let director = "";
+let html = " ";
+let producer = "";
+let release_date = "";
 
+//Imprime en el HTML la data de las 20 peliculas del Studio Ghibli
 const allFilms = document.getElementById("allFilms");
-allFilms.innerHTML= data.films.map (mostrarFilm).join(" ")
+allFilms.innerHTML = data.films.map(mostrarFilm).join(" ");
 
-const director = document.getElementById("director");
-director.innerHTML= data.films.map(mostrarDirector)
+//Filtrado por director
+const filtrarDirector = document.querySelector("#filtrarDirector");
+filtrarDirector.addEventListener("change", () => {
+  director = document.querySelector("#filtrarDirector").value;
+  //console.log (filtroDirectores (films,director))
+  const allFilms = document.getElementById("allFilms");
+  allFilms.innerHTML = " ";
 
-//const pelicula= document.getElementById('pelicula');
-//pelicula.innerHTML=example("en un futuro eso sera la data")
+  for (let i = 0; i < filtroDirectores(films, director).length; i++) {
+    //console.log(filtroDirectores(films,director)[i])
+    let peliDirectores = `<article class = "peli">
+          <img src="${filtroDirectores(films, director)[i].poster}">
+          <h2> ${filtroDirectores(films, director)[i].title}</h2>
+          <h3>Director: ${filtroDirectores(films, director)[i].director}</h3>
+          <h3>Producer: ${filtroDirectores(films, director)[i].producer}</h3>
+          <h3>${filtroDirectores(films, director)[i].release_date} </h3>
+          </article>`;
+    /* html += peliDirectores;*/
+    allFilms.innerHTML += peliDirectores;
+  }
+});
 
+//Filtrado por productor
+const filtrarProductor = document.querySelector("#filtrarProductor");
+filtrarProductor.addEventListener("change", () => {
+  producer = document.querySelector("#filtrarProductor").value;
+  //console.log (filtroProductores (films,producer))
+  const allFilms = document.getElementById("allFilms");
+  allFilms.innerHTML = " ";
+
+  for (let i = 0; i < filtroProductores(films, producer).length; i++) {
+    // console.log(filtroDirectores(films,producer)[i])
+    let peliProductores = `<article class = "peli">
+          <img src="${filtroProductores(films, producer)[i].poster}">
+          <h2> ${filtroProductores(films, producer)[i].title}</h2>
+          <h3>Director: ${filtroProductores(films, producer)[i].director}</h3>
+          <h3>Producer: ${filtroProductores(films, producer)[i].producer}</h3>
+          <h3>${filtroProductores(films, producer)[i].release_date} </h3>
+          </article>`;
+    /* html += peliDirectores;*/
+    allFilms.innerHTML += peliProductores;
+  }
+});
+
+//Filtrado por fecha
+const filtrarFecha = document.querySelector("#filtrarFecha");
+filtrarFecha.addEventListener("change", () => {
+  release_date = document.querySelector("#filtrarFecha").value;
+  //console.log (filtroProductores (films,producer))
+  const allFilms = document.getElementById("allFilms");
+  allFilms.innerHTML = " ";
+
+  for (let i = 0; i < filtroFecha(films, release_date).length; i++) {
+    // console.log(filtroDirectores(films,producer)[i])
+    let peliFecha = `<article class = "peli">
+          <img src="${filtroFecha(films, release_date)[i].poster}">
+          <h2> ${filtroFecha(films, release_date)[i].title}</h2>
+          <h3>Director: ${filtroFecha(films, release_date)[i].director}</h3>
+          <h3>Producer: ${filtroFecha(films, release_date)[i].producer}</h3>
+          <h3>${filtroFecha(films, release_date)[i].release_date} </h3>
+          </article>`;
+    /* html += peliDirectores;*/
+    allFilms.innerHTML += peliFecha;
+  }
+});
+
+//console.log(html)
+//console.log(allFilms)
+//console.log(director)
+//console.log (filtroDirectores (films,director))
