@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Hind+Vadodara&family=Wendy+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Hind+Vadodara&family=Wendy+One&display=swap");
 /*Selector Universal*/
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-header{
+header {
   background-color: rgb(43, 156, 226);
   height: 120px;
   display: flex; /*como se va a mostrar*/
@@ -14,68 +14,108 @@ header{
   gap: 30%; /*espacio entre el logo y el texto*/
 }
 
-#logo{
-    width: auto;
-    height: 120px;
-    
-  }
+#logo {
+  width: auto;
+  height: 120px;
+}
 
-
-h1{
-  font-family: 'Wendy One', sans-serif;
+h1 {
+  font-family: "Wendy One", sans-serif;
   color: white;
   font-size: 3rem;
-  letter-spacing: .2rem; /*espacio entre las letras*/
-  
+  letter-spacing: 0.2rem; /*espacio entre las letras*/
 }
 
-h2{
-  font-family: 'Catamaran', sans-serif;
+h2 {
+  font-family: "Catamaran", sans-serif;
   text-align: center;
+  font-size: 2rem;
   color: rgb(18, 85, 126);
 }
 
-h3{
-  font-family: 'Hind Vadodara', sans-serif;
+h3 {
+  font-family: "Hind Vadodara", sans-serif;
   color: rgb(18, 85, 126);
+  font-size: 1rem;
 
-  
 }
-h4{
-  font-family: 'Hind Vadodara', sans-serif;
+h4 {
+  font-family: "Hind Vadodara", sans-serif;
   text-align: center;
-  font-size: .8rem;
-  letter-spacing: .2rem;
-  
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
 }
 
-#TextoStudioGhibli{
+#TextoStudioGhibli {
   text-align: justify;
   margin: 40px;
+}
 
+
+/*Span contiene filtros*/
+/*rgb(18, 85, 126) header
+rgb(18, 85, 126) letras
+*/
+
+section {
+  margin: 40px;
+  text-align: center;
+}
+
+.selectores{
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 1rem;
+  width: 20%;
+  margin: 5px;
+  padding: 5px;
+  background: rgb(43, 156, 226);
+  color: none - none - none
+  border: none;
+  cursor: pointer;
+}
+
+.filtroZA{
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 1rem;
+  width: 20%;
+  margin: 5px;
+  padding: 5px;
+  background: rgb(43, 156, 226);
+  color: none - none - none
+  border: none;
+  cursor: pointer;
+}
+
+.selectores-content{
+  display:none ;
+  position: absolute;
+  background-color: #bce0f6;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 /*Carrusel*/
-#contenedorItemCarrusel{
+#contenedorItemCarrusel {
   /*Su alto es el de los elementos que contiene*/
   height: 400px;
   margin: 30px;
-  text-align: center; 
+  text-align: center;
   overflow: hidden;
 }
 
-.itemCarrusel{
+.itemCarrusel {
   /*Tarjeta y flechas heredarán la altura*/
   position: relative;
   height: 100%;
 }
 
-.tarjetaCarrusel{
+.tarjetaCarrusel {
   height: 100%;
   width: 100%;
   background-size: 100% 100%;
-  }
-.flechasCarrusel{
+}
+.flechasCarrusel {
   width: 100%;
   height: 100%;
   /*Absolute toma como referencia el elemento posicionado más cercano non-static(puede ser el padre)*/
@@ -87,40 +127,32 @@ h4{
   justify-content: space-between;
   padding: 5%;
   height: 100%;
-  
 }
-a {
+i {
   text-decoration: none;
-  color: white;
+  color: rgb(216, 211, 211);
   font-size: x-large;
-  text-shadow: 3px 3px 1px  gray;
-
+  text-shadow: 3px 3px 1px gray;
 }
 
-/*.seccionBotones{
-  width: 30%;
-  text-align: center;
-  background-color: brown;
-}  float: left;*/
 
 
-#allFilms{
-  display:flex;
+#allFilms {
+  display: flex;
   flex-wrap: wrap;
+  }
 
-}
-
-
-.peli{
-  flex: 1 0 20%;
-  text-align: center;
+.peli {
+  flex: 1 0 20%;  text-align: center;
   margin: 30px;
   padding: 10px;
   color: rgb(18, 85, 126);
-}
+  border-radius: 15px;
+  filter: drop-shadow(14px 14px 4px rgba(0, 0, 0, 0.3));
 
+  }
 
-  .footer {
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -134,10 +166,11 @@ a {
 }
 
 
-
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
-  .peli, #contenedorItemCarrusel, #allFilms{
+  .peli,
+  #contenedorItemCarrusel,
+  #allFilms {
     width: 100%;
   }
 }

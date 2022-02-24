@@ -1,5 +1,5 @@
 // estas funciones son de ejemplo
-// controlar toda la logica del programa 
+// controlar toda la logica del programa
 //manipulacion del DOM template string
 export let mostrarFilm = (film) => {
   return `<article class = "peli">
@@ -8,12 +8,36 @@ export let mostrarFilm = (film) => {
           <h3>Director: ${film.director}</h3>
           <h3>Producer: ${film.producer}</h3>
           <h3>${film.release_date} </h3>
-          </article>`
+          </article>`;
 };
 
-
 //Funcion del select por director
-export let filtroDirectores = (films,director) => {
-  const arrayDirector = films.filter(film => film.director == director);
-  return arrayDirector; 
+export let filtroDirectores = (films, director) => {
+  const arrayDirector = films.filter((film) => film.director == director);
+  return arrayDirector;
+};
+
+//Funcion del select por productor
+export let filtroProductores = (films, producer) => {
+  const arrayProductor = films.filter((film) => film.producer == producer);
+  return arrayProductor;
+};
+
+//Funcion del select por año
+export let filtroFecha = (films, release_date) => {
+  const arrayFecha = films.filter((film) => film.release_date == release_date);
+  return arrayFecha;
+};
+
+//Orden por letras de pelicula A-Z -- Z-A
+export const OrdenarAlfabeticamente = (films, orden) => {
+  const ordenarDeAZ = films.sort((film1, film2) => ((film1.title > film2.title) ? 1 : -1));
+  if (orden === 'A-Z') {
+  //console.log(ordenarDeAZ);
+    return ordenarDeAZ;
+  }
+  if (orden === 'Z-A') {
+    return ordenarDeAZ.reverse();
+  }
+  return ordenarDeAZ;
 };
