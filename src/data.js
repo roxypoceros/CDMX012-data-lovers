@@ -28,3 +28,16 @@ export let filtroFecha = (films, release_date) => {
   const arrayFecha = films.filter((film) => film.release_date == release_date);
   return arrayFecha;
 };
+
+//Orden por letras de pelicula A-Z -- Z-A
+export const OrdenarAlfabeticamente = (films, orden) => {
+  const ordenarDeAZ = films.sort((film1, film2) => ((film1.title > film2.title) ? 1 : -1));
+  if (orden === 'A-Z') {
+  //console.log(ordenarDeAZ);
+    return ordenarDeAZ;
+  }
+  if (orden === 'Z-A') {
+    return ordenarDeAZ.reverse();
+  }
+  return ordenarDeAZ;
+};

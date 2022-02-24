@@ -59,8 +59,7 @@ rgb(18, 85, 126) letras
 
 section {
   margin: 40px;
-
-
+  text-align: center;
 }
 
 .selectores{
@@ -73,8 +72,20 @@ section {
   color: none - none - none
   border: none;
   cursor: pointer;
-
 }
+
+.filtroZA{
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 1rem;
+  width: 20%;
+  margin: 5px;
+  padding: 5px;
+  background: rgb(43, 156, 226);
+  color: none - none - none
+  border: none;
+  cursor: pointer;
+}
+
 .selectores-content{
   display:none ;
   position: absolute;
@@ -83,16 +94,6 @@ section {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
-
-
-
-
-
-
-
-
-
 
 /*Carrusel*/
 #contenedorItemCarrusel {
@@ -139,15 +140,17 @@ i {
 #allFilms {
   display: flex;
   flex-wrap: wrap;
-}
+  }
 
 .peli {
-  flex: 1 0 20%;
-  text-align: center;
+  flex: 1 0 20%;  text-align: center;
   margin: 30px;
   padding: 10px;
   color: rgb(18, 85, 126);
-}
+  border-radius: 15px;
+  filter: drop-shadow(14px 14px 4px rgba(0, 0, 0, 0.3));
+
+  }
 
 .footer {
   position: fixed;

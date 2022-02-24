@@ -20,6 +20,7 @@
       src="https://kit.fontawesome.com/3f1a48658c.js"
       crossorigin="anonymous"
     ></script>
+
     <title>Ghibli’s Universe</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -108,7 +109,7 @@
 
     <!-- Texto Studio Ghibli -->
     <section id="TextoStudioGhibli">
-      <h2>Studio Ghibli</h2>
+      <h2>Studio Ghibli スタジオジブリ</h2>
       <h3>
         Studio Ghibli Inc. is a Japanese animation film studio headquartered in
         Koganei, Tokyo. The studio is best known for its animated feature films,
@@ -125,24 +126,26 @@
       </h3>
     </section>
 
-    <h2>Studio Ghibli´s Films</h2>
+    <h2> Ghibli’s Universe Films </h2>
 
     <!-- Contiene filtros -->
 
     <section>
       <!-- Filtrado por director -->
       <select name="filtrarDirector" id="filtrarDirector" class="selectores">
-        <option>Choose a director:</option>
+        <option disabled selected>Choose a director:</option>
         <option value="Hayao Miyazaki">Hayao Miyazaki</option>
         <option value="Isao Takahata">Isao Takahata</option>
         <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
         <option value="Hiroyuki Morita">Hiroyuki Morita</option>
         <option value="Gorō Miyazaki">Gorō Miyazaki</option>
         <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+        <option value="All">All</option>
       </select>
 
+      <!-- Filtrado por Productor -->
       <select name="filtrarProductor" id="filtrarProductor" class="selectores">
-        <option>Choose a producer:</option>
+        <option disabled selected>Choose a producer:</option>
         <option value="Isao Takahata">Isao Takahata</option>
         <option value="Hayao Miyazaki">Hayao Miyazaki</option>
         <option value="Toru Hara">Toru Hara</option>
@@ -150,8 +153,9 @@
         <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
       </select>
 
+      <!-- Filtrado por año -->
       <select name="filtrarFechar" id="filtrarFecha" class="selectores">
-        <option>Choose a year:</option>
+        <option disabled selected>Choose a year:</option>
         <option value="1986">1986</option>
         <option value="1988">1988</option>
         <option value="1989">1989</option>
@@ -171,6 +175,15 @@
         <option value="2013">2013</option>
         <option value="2014">2014</option>
       </select>
+
+      <!-- Filtro ordenar A-Z -->
+      <select name="filtroAZ" id="filtroAZ" class="filtroZA">
+        <option disabled selected>Sort:</option>
+        <option value="A-Z">Films A-Z</option>
+        <option value="Z-A">Films Z-A</option>
+      </select>
+  
+
     </section>
 
     <!-- Área para mostrar peliculas -->

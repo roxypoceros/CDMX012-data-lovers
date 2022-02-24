@@ -8,12 +8,15 @@ import { mostrarFilm } from "./data.js";
 import { filtroDirectores } from "./data.js";
 import { filtroProductores } from "./data.js";
 import { filtroFecha } from "./data.js";
+import { OrdenarAlfabeticamente  } from "./data.js";
+//import { ordenarZA } from "./data.js";
+
 
 const films = data.films;
 let director = "";
-let html = " ";
 let producer = "";
 let release_date = "";
+
 
 //Imprime en el HTML la data de las 20 peliculas del Studio Ghibli
 const allFilms = document.getElementById("allFilms");
@@ -89,3 +92,25 @@ filtrarFecha.addEventListener("change", () => {
 //console.log(allFilms)
 //console.log(director)
 //console.log (filtroDirectores (films,director))
+
+//Filtrado por Orden AZ
+const filtroAZ = document.querySelector('#filtroAZ');
+filtroAZ.addEventListener('change', () => {
+  allFilms.innerHTML = '';
+
+  for (let i = 0; i < OrdenarAlfabeticamente(films,filtroAZ.value).length; i++) {
+    // console.log(filtroDirectores(films,producer)[i])
+    let peliOrden = `<article class = "peli">
+          <img src="${OrdenarAlfabeticamente(films,filtroAZ.value)[i].poster}">
+          <h2> ${OrdenarAlfabeticamente(films,filtroAZ.value)[i].title}</h2>
+          <h3>Director: ${OrdenarAlfabeticamente(films,filtroAZ.value)[i].director}</h3>
+          <h3>Producer: ${OrdenarAlfabeticamente(films,filtroAZ.value)[i].producer}</h3>
+          <h3>${OrdenarAlfabeticamente(films,filtroAZ.value)[i].release_date} </h3>
+          </article>`;
+    /* html += peliDirectores;*/
+    allFilms.innerHTML += peliOrden;
+  }
+  //allFilms.innerHTML= OrdenarAlfabeticamente(films,filtroAZ.value);
+});
+
+
