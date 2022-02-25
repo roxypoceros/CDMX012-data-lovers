@@ -20,6 +20,7 @@
       src="https://kit.fontawesome.com/3f1a48658c.js"
       crossorigin="anonymous"
     ></script>
+
     <title>Ghibli’s Universe</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -108,7 +109,7 @@
 
     <!-- Texto Studio Ghibli -->
     <section id="TextoStudioGhibli">
-      <h2>Studio Ghibli</h2>
+      <h2>Studio Ghibli スタジオジブリ</h2>
       <h3>
         Studio Ghibli Inc. is a Japanese animation film studio headquartered in
         Koganei, Tokyo. The studio is best known for its animated feature films,
@@ -125,24 +126,37 @@
       </h3>
     </section>
 
-    <h2>Studio Ghibli´s Films</h2>
+    <h2> Ghibli’s Universe Films </h2>
+
+    <!-- Buscador -->
+
+    <section class="seccionBuscador" >
+      <!-- <a href=""><i class="fa-solid fa-magnifying-glass"></i></a> -->
+      <input type="search" id="inputBuscador" class="inputBuscador" placeholder="Search for your favorite film" /> 
+
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+        <path  fill-rule="evenodd" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" clip-rule="evenodd" />
+      </svg>  -->
+      </section>
 
     <!-- Contiene filtros -->
 
     <section>
       <!-- Filtrado por director -->
       <select name="filtrarDirector" id="filtrarDirector" class="selectores">
-        <option>Choose a director:</option>
+        <option disabled selected>Choose a director:</option>
         <option value="Hayao Miyazaki">Hayao Miyazaki</option>
         <option value="Isao Takahata">Isao Takahata</option>
         <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
         <option value="Hiroyuki Morita">Hiroyuki Morita</option>
         <option value="Gorō Miyazaki">Gorō Miyazaki</option>
         <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+        <option value="All">All</option>
       </select>
 
+      <!-- Filtrado por Productor -->
       <select name="filtrarProductor" id="filtrarProductor" class="selectores">
-        <option>Choose a producer:</option>
+        <option disabled selected>Choose a producer:</option>
         <option value="Isao Takahata">Isao Takahata</option>
         <option value="Hayao Miyazaki">Hayao Miyazaki</option>
         <option value="Toru Hara">Toru Hara</option>
@@ -150,8 +164,9 @@
         <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
       </select>
 
+      <!-- Filtrado por año -->
       <select name="filtrarFechar" id="filtrarFecha" class="selectores">
-        <option>Choose a year:</option>
+        <option disabled selected>Choose a year:</option>
         <option value="1986">1986</option>
         <option value="1988">1988</option>
         <option value="1989">1989</option>
@@ -171,6 +186,15 @@
         <option value="2013">2013</option>
         <option value="2014">2014</option>
       </select>
+
+      <!-- Filtro ordenar A-Z -->
+      <select name="filtroAZ" id="filtroAZ" class="filtroZA">
+        <option disabled selected>Sort:</option>
+        <option value="A-Z">Films A-Z</option>
+        <option value="Z-A">Films Z-A</option>
+      </select>
+  
+
     </section>
 
     <!-- Área para mostrar peliculas -->

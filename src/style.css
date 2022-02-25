@@ -29,7 +29,7 @@ h1 {
 h2 {
   font-family: "Catamaran", sans-serif;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: rgb(18, 85, 126);
 }
 
@@ -59,10 +59,10 @@ rgb(18, 85, 126) letras
 
 section {
   margin: 40px;
-
-
+  text-align: center;
 }
 
+/* Estilo de selectores */
 .selectores{
   font-family: "Hind Vadodara", sans-serif;
   font-size: 1rem;
@@ -72,9 +72,23 @@ section {
   background: rgb(43, 156, 226);
   color: none - none - none
   border: none;
-  cursor: pointer;
-
+  cursor:pointer;
 }
+
+.filtroZA{
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 1rem;
+  width: 20%;
+  margin: 5px;
+  padding: 5px;
+  background: rgb(43, 156, 226);
+  color: none - none - none
+  border: none;
+  cursor: pointer;
+}
+
+
+
 .selectores-content{
   display:none ;
   position: absolute;
@@ -83,16 +97,6 @@ section {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
-
-
-
-
-
-
-
-
-
 
 /*Carrusel*/
 #contenedorItemCarrusel {
@@ -127,27 +131,59 @@ section {
   padding: 5%;
   height: 100%;
 }
-i {
+
+
+
+
+.flechasCarrusel > i {
   text-decoration: none;
   color: rgb(216, 211, 211);
-  font-size: x-large;
+  font-size: 2rem;
   text-shadow: 3px 3px 1px gray;
 }
+
+
 
 
 
 #allFilms {
   display: flex;
   flex-wrap: wrap;
-}
+  }
 
 .peli {
-  flex: 1 0 20%;
-  text-align: center;
+  flex: 1 0 20%;  text-align: center;
   margin: 30px;
   padding: 10px;
   color: rgb(18, 85, 126);
+  
 }
+
+.peli > img{
+  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
+  
+}
+
+.poster{
+  border-radius: 15px;
+  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
+}
+
+.seccionBuscador{
+  align-items: center;
+  text-align: center;
+
+}
+
+.inputBuscador{
+  width: 30%;
+  height: 2rem;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1.5px solid rgb(43, 156, 226);
+}
+
+
 
 .footer {
   position: fixed;
@@ -162,6 +198,11 @@ i {
   padding: 1%;
 }
 
+i {
+  text-decoration: none;
+  color: rgb(216, 211, 211);
+  font-size: larger;
+}
 
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
