@@ -114,17 +114,7 @@ const inputBuscador = document.getElementById("inputBuscador");
 inputBuscador.addEventListener('keyup',() =>{
 
    todosFilms = buscador(films, 'title', inputBuscador.value);
-   console.table(todosFilms);
-   
-   for (let i = 0; i < buscador(films,inputBuscador.value).length; i++) {
-    // console.log(filtroDirectores(films,producer)[i])
-    let peliBuscador = `<article class = "peli">
-          <img src="${buscador(films,inputBuscador.value)[i].poster}">
-          <h2> ${buscador(films,inputBuscador.value)[i].title}</h2>
-          <h3>Director: ${buscador(films,inputBuscador.value)[i].director}</h3>
-          <h3>Producer: ${buscador(films,inputBuscador.value)[i].producer}</h3>
-          <h3>${buscador(films,inputBuscador.value)[i].release_date} </h3>
-          </article>`;
-    allFilms.innerHTML += peliBuscador;
-  }
+   allFilms.innerHTML = todosFilms.map(mostrarFilm).join(" ");
+
+
 });
