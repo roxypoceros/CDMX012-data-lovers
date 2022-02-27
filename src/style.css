@@ -29,7 +29,7 @@ h1 {
 h2 {
   font-family: "Catamaran", sans-serif;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: rgb(18, 85, 126);
 }
 
@@ -46,7 +46,7 @@ h4 {
   letter-spacing: 0.2rem;
 }
 
-#TextoStudioGhibli {
+#textoStudioGhibli {
   text-align: justify;
   margin: 40px;
 }
@@ -62,6 +62,7 @@ section {
   text-align: center;
 }
 
+/* Estilo de selectores */
 .selectores{
   font-family: "Hind Vadodara", sans-serif;
   font-size: 1rem;
@@ -71,7 +72,7 @@ section {
   background: rgb(43, 156, 226);
   color: none - none - none
   border: none;
-  cursor: pointer;
+  cursor:pointer;
 }
 
 .filtroZA{
@@ -85,6 +86,8 @@ section {
   border: none;
   cursor: pointer;
 }
+
+
 
 .selectores-content{
   display:none ;
@@ -129,15 +132,12 @@ section {
   height: 100%;
 }
 
-
-i {
+.flechasCarrusel > i {
   text-decoration: none;
   color: rgb(216, 211, 211);
-  font-size: x-large;
+  font-size: 2rem;
   text-shadow: 3px 3px 1px gray;
 }
-
-
 
 #allFilms {
   display: flex;
@@ -152,26 +152,37 @@ i {
   
 }
 
+.peli > img{
+  border-radius: 15px;
+  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
+  
+}
+
 .poster{
   border-radius: 15px;
   filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
+}
+
+.seccionBuscador{
+  align-items: center;
+  text-align: center;
+
 }
 
 .inputBuscador{
   width: 30%;
   height: 2rem;
   padding: 5px;
+  border-radius: 5px;
+  border: 1.5px solid rgb(43, 156, 226);
 }
 
-.input-icon {
-  color: #191919;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+
+.selectPeli > img {
+  border-radius: 15px;
+  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
 }
+
 
 
 .footer {
@@ -186,6 +197,13 @@ i {
   align-items: center;
   padding: 1%;
 }
+
+i {
+  text-decoration: none;
+  color: rgb(216, 211, 211);
+  font-size: larger;
+}
+
 
 
 @media only screen and (max-width: 620px) {
