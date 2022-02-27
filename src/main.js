@@ -10,6 +10,8 @@ import { filtroProductores } from "./data.js";
 import { filtroFecha } from "./data.js";
 import { ordenarAlfabeticamente  } from "./data.js";
 import { buscador } from "./data.js";
+import { visualizarPeli } from "./data.js";
+//import { visualizarPersonaje } from "./data.js";
 
 
 const films = data.films;
@@ -19,9 +21,10 @@ let release_date = "";
 let todosFilms = films;
 
 
+
 //Imprime en el HTML la data de las 20 peliculas del Studio Ghibli
 const allFilms = document.getElementById("allFilms");
-allFilms.innerHTML = data.films.map(mostrarFilm).join(" ");
+allFilms.innerHTML = films.map(mostrarFilm).join(" ");
 
 //Filtrado por director
 const filtrarDirector = document.querySelector("#filtrarDirector");
@@ -112,9 +115,78 @@ filtroAZ.addEventListener('change', () => {
 //Buscador
 const inputBuscador = document.getElementById("inputBuscador");
 inputBuscador.addEventListener('keyup',() =>{
-
    todosFilms = buscador(films, 'title', inputBuscador.value);
    allFilms.innerHTML = todosFilms.map(mostrarFilm).join(" ");
-
-
 });
+
+
+
+//Limpia pantalla
+let contenedorGeneralPeli = document.getElementById("contenedorGeneralPeli");
+const contenedorItemCarrusel = document.getElementById("contenedorItemCarrusel");
+const textoStudioGhibli = document.getElementById("textoStudioGhibli");
+const seccionBuscador= document.getElementById("seccionBuscador");
+const seccionFiltrado= document.getElementById("seccionFiltrado");
+//document.getElementById("allFilms").addEventListener('click', function (){
+document.querySelectorAll(".peli").forEach(el => {
+    el.addEventListener("click", e => {
+      const id = e.target.getAttribute("id");
+      
+      //console.log("Se ha clickeado el id "+id);
+      contenedorItemCarrusel.style.display='none';
+      contenedorGeneralPeli.style.display='flex';
+      allFilms.style.display='none';
+      seccionBuscador.style.display='none';
+      textoStudioGhibli.style.display='none';
+      seccionFiltrado.style.display='none';
+      
+      //Muestra en pantalla sinopsis
+      const selectPeli = document.getElementById("selectPeli");
+      selectPeli.innerHTML = " ";
+      for (let i = 0; i < visualizarPeli (films, id).length; i++) {
+        //console.log(visualizarPeli(films,director)[i])
+        let peliGeneral = `<article id="${id}" >
+          <img src="${visualizarPeli(films, id)[i].poster}">
+          <h2> ${visualizarPeli(films, id)[i].title}</h2>
+          <h3> ${visualizarPeli(films, id)[i].description}</h3>
+          </article>`;
+          let nuevaGente = Object.entries(films[i].people);
+
+          console.table(nuevaGente)
+          selectPeli.innerHTML += peliGeneral;
+     
+      }
+
+      //Muestra personajes en pantalla
+      /* const selectPersonajes = document.getElementById("selectPersonajes");
+      selectPersonajes.innerHTML = " ";
+      for (let i = 0; i < visualizarPersonaje (films,id).length; i++) {
+        //console.log(visualizarPersonaje(films,director)[i])
+        let peliGeneral = `<article id="${id}">
+          <img src="${visualizarPersonaje(films,people)[i].name}">
+          <h2> ${visualizarPersonaje(films,people)[i].img}</h2>
+          </article>`;
+          console.table(people)
+          selectPersonajes.innerHTML += peliGeneral;
+      } */
+
+
+      //Muestra personajes en pantalla
+      /* const selectPersonajes = document.getElementById("selectPersonajes");
+      selectPersonajes.innerHTML = " ";
+      for (let i = 0; i < visualizarPersonaje (films,id).length; i++) {
+        //console.log(visualizarPersonaje(films,director)[i])
+        let peliGeneral = `<article id="${id}">
+          <img src="${visualizarPersonaje(films,people)[i].name}">
+          <h2> ${visualizarPersonaje(films,people)[i].img}</h2>
+          </article>`;
+          console.table(people)
+          selectPersonajes.innerHTML += peliGeneral;
+      } */
+
+
+
+      
+    });
+});
+

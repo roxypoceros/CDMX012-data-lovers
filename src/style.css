@@ -46,7 +46,7 @@ h4 {
   letter-spacing: 0.2rem;
 }
 
-#TextoStudioGhibli {
+#textoStudioGhibli {
   text-align: justify;
   margin: 40px;
 }
@@ -132,19 +132,12 @@ section {
   height: 100%;
 }
 
-
-
-
 .flechasCarrusel > i {
   text-decoration: none;
   color: rgb(216, 211, 211);
   font-size: 2rem;
   text-shadow: 3px 3px 1px gray;
 }
-
-
-
-
 
 #allFilms {
   display: flex;
@@ -160,6 +153,7 @@ section {
 }
 
 .peli > img{
+  border-radius: 15px;
   filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
   
 }
@@ -184,6 +178,12 @@ section {
 }
 
 
+.selectPeli > img {
+  border-radius: 15px;
+  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
+}
+
+
 
 .footer {
   position: fixed;
@@ -203,6 +203,8 @@ i {
   color: rgb(216, 211, 211);
   font-size: larger;
 }
+
+
 
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
