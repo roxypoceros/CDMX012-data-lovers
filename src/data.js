@@ -2,7 +2,7 @@
 //manipulacion del DOM template string
 export let mostrarFilm = (film) => {
   return `<section class = "peli"> 
-          <h5><div id="${film.id}" class="click">More info</div></h5>
+  <center><h5><div id="${film.id}" class="click">More info</div></h5></center>
           <img src="${film.poster}" class="poster">
           <h2> ${film.title}</h2>
           <h3>Director: ${film.director}</h3>

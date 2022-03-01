@@ -151,10 +151,10 @@ document.querySelectorAll(".peli").forEach((el) => {
       console.table(nuevaGente);
       for (let i = 0; i < nuevaGente.length; i++) {
         let peliPersonajes = `<section id="${id}" >
-      <img src="${nuevaGente[i].img}" class="posterPeli">
-      <h2>Name: ${nuevaGente[i].name}</h2>
-      <h2>Gender: ${nuevaGente[i].gender}</h2>
-      <h2>Age: ${nuevaGente[i].age}</h2>
+      <center><img src="${nuevaGente[i].img}" class="posterPeli"></center>
+      <h3>Name:</h3><h2> ${nuevaGente[i].name}</h2>
+      <h3>Gender:</h3><h2> ${nuevaGente[i].gender}</h2>
+      <h3>Age:</h3><h2> ${nuevaGente[i].age}</h2>
       </section>`;
         selectPersonajes.innerHTML += peliPersonajes;
       }
@@ -164,7 +164,7 @@ document.querySelectorAll(".peli").forEach((el) => {
       let nuevaLocacion = peliActual.locations;
       for (let i = 0; i < nuevaLocacion.length; i++) {
         let peliLocacion = `<section id="${id}" >
-      <img src="${nuevaLocacion[i].img}" class="posterPeli">
+        <center><img src="${nuevaLocacion[i].img}" class="posterPeli"></center>
       <h2> ${nuevaLocacion[i].name}</h2>
       </section>`;
         selectLocaciones.innerHTML += peliLocacion;
@@ -175,7 +175,7 @@ document.querySelectorAll(".peli").forEach((el) => {
       let nuevoVehiculo = peliActual.vehicles;
       for (let i = 0; i < nuevoVehiculo.length; i++) {
         let peliVehiculo = `<section id="${id}">
-      <img src="${nuevoVehiculo[i].img}" class="posterPeli">
+        <center><img src="${nuevoVehiculo[i].img}" class="posterPeli"></center>
       <h2> ${nuevoVehiculo[i].name}</h2>
       </section>`;
         selectVehiculos.innerHTML += peliVehiculo;
