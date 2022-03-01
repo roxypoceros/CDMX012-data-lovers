@@ -296,7 +296,7 @@ export default {
         {
           "id": "c491755a-407d-4d6e-b58a-240ec78b5061",
           "name": "Chibi Totoro",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c5/Little_Totoro_spirit_moving.gif",
+          "img": "https://www.personality-database.com/profile_images/373541.png",
           "gender": "NA",
           "age": "",
           "eye_color": "Black",
@@ -710,7 +710,7 @@ export default {
         {
           "id": "4a2e2cee-08ca-4d44-9564-2b3e5421bafb",
           "name": "Fio Piccolo",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/1/16/Fio_%282%29.jpg",
+          "img": "https://static.wikia.nocookie.net/studioghibli/images/c/c2/Fio_Piccolo.jpg/revision/latest/scale-to-width-down/360?cb=20200613031906&path-prefix=es",
           "gender": "Female",
           "age": "17",
           "eye_color": "Brown",

@@ -128,18 +128,45 @@
 
 
 
+
+
     </section>
 
     <!-- Buscador -->
-
-    <section id="seccionBuscador" class="seccionBuscador" >
-      <!-- <a href=""><i class="fa-solid fa-magnifying-glass"></i></a> -->
+    
+    <section id="seccionBuscador" class="seccionBuscador"> 
       <input type="search" id="inputBuscador" class="inputBuscador" placeholder="Search for your favorite film" /> 
+      <input type="button" value="top10" id="top">
+    </section>
 
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
-        <path  fill-rule="evenodd" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" clip-rule="evenodd" />
-      </svg>  -->
-      </section>
+    <!-- Graficas -->
+
+    <style>
+     .chart{
+       width: 40%;
+
+     }
+
+     .contenedorGraficas{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+
+     }
+
+
+
+    </style>
+
+
+    <section class="contenedorGrafica"> 
+    <section class="chart"> 
+      <h2>Top10</h2>
+      <canvas id="myChart" width="400" height="400"></canvas>
+    </section>
+    </section>
+   
+    
 
     <!-- Contiene filtros -->
 
@@ -205,11 +232,18 @@
 
     <!-- Área para mostrar información de pelicula -->
     <section style="display: none" id="contenedorGeneralPeli">
-    <section id="selectPeli" class="selectPeli"  ></section>
-    <section id="selectPersonajes"></section>
-    <section id="selectLocaciones"></section>
-    <section id="selectVehiculos"></section>
-
+    <section id="selectPeli" class="selectPeli"></section>
+    <section class="contenedorExtra">
+    <section id="selectPersonajes" class="selectPersonajes">
+      <h2> Characters </h2>
+    </section>
+    <section id="selectLocaciones" class="selectLocaciones">
+      <h2>Locations</h2>
+    </section>
+    <section id="selectVehiculos" class="selectVehiculos">
+      <h2>Vehicles</h2>
+    </section>  
+    </section>
     </section>
 
 
@@ -220,7 +254,7 @@
 
     <!-- Footer -->
 
-   <!--  <footer class="footer">
+    <footer class="footer">
       <h4>
         Data Lovers Copyright 2022 by Roxana Hernández
         <a class="gitHubLogo" href="https://github.com/roxypoceros"
@@ -231,8 +265,11 @@
           ><i class="fa-brands fa-github"></i>
         </a>
       </h4>
-    </footer> -->
+    </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" 
+    integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="main.js" type="module"></script>
   </body>
 </html>
