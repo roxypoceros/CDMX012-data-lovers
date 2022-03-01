@@ -1,16 +1,15 @@
 // controlar toda la logica del programa
 //manipulacion del DOM template string
 export let mostrarFilm = (film) => {
-  return `<article class = "peli"> 
-          <div id="${film.id}" class="click">More info</div>
+  return `<section class = "peli"> 
+          <h5><div id="${film.id}" class="click">More info</div></h5>
           <img src="${film.poster}" class="poster">
           <h2> ${film.title}</h2>
           <h3>Director: ${film.director}</h3>
           <h3>Producer: ${film.producer}</h3>
           <h3>${film.release_date} </h3>
-          </article>`;
+          </section>`;
 };
-
 
 //Funcion del select por director
 export let filtroDirectores = (films, director) => {
@@ -49,17 +48,8 @@ export const buscador = (films, condition, value) => {
   return films.filter(elemento => elemento[condition].toLowerCase().includes(value.toLowerCase()));
 }
 
-//Trae sinopsis de peliculas
+//Trae sinopsis de peliculas por ID n
 export let visualizarPeli = (films, id) => {
   const arrayId = films.filter((film) => film.id == id);  
   return arrayId;
 };
-
-
-//Trae personajes
-/* export let visualizarPersonaje = (Object.keys(films)) => {
-  const arrayPersonaje = films.filter((film) => film.people.name== people.name);
-  console.table(arrayPersonaje)  
-  return arrayPersonaje;
-};
- */
