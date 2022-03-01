@@ -46,7 +46,17 @@ h4 {
   letter-spacing: 0.2rem;
 }
 
-#TextoStudioGhibli {
+h5{
+  font-family: "Hind Vadodara", sans-serif;
+  margin: 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  width: 60%;
+  font-weight: bolder;
+}
+
+#textoStudioGhibli {
   text-align: justify;
   margin: 40px;
 }
@@ -69,7 +79,7 @@ section {
   width: 20%;
   margin: 5px;
   padding: 5px;
-  background: rgb(43, 156, 226);
+  background: rgb(27, 129, 193,0.7);
   color: none - none - none
   border: none;
   cursor:pointer;
@@ -81,7 +91,7 @@ section {
   width: 20%;
   margin: 5px;
   padding: 5px;
-  background: rgb(43, 156, 226);
+  background: rgb(27, 129, 193,0.7);
   color: none - none - none
   border: none;
   cursor: pointer;
@@ -96,6 +106,40 @@ section {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+}
+
+
+.home {
+  align-items: center;
+  appearance: button;
+  background-color: #0276FF;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 10px 21px;
+  text-align: center;
+  text-transform: none;
+  transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.home:active {
+  background-color: #006AE8;
+}
+
+.home:hover {
+  background-color: #1C84FF;
 }
 
 /*Carrusel*/
@@ -132,19 +176,12 @@ section {
   height: 100%;
 }
 
-
-
-
 .flechasCarrusel > i {
   text-decoration: none;
   color: rgb(216, 211, 211);
   font-size: 2rem;
   text-shadow: 3px 3px 1px gray;
 }
-
-
-
-
 
 #allFilms {
   display: flex;
@@ -160,6 +197,7 @@ section {
 }
 
 .peli > img{
+  border-radius: 15px;
   filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
   
 }
@@ -184,6 +222,93 @@ section {
 }
 
 
+.posterPeli {
+  display: flex;
+  border-radius: 15px;
+  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
+}
+
+#contenedorGeneralPeli{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+ background-color: antiquewhite;
+  width: 90vw;
+}
+
+.selectPeli{
+  width: 100%;
+  background-color: yellow;
+}
+
+.sinopsisPoster{
+  display: inline;
+  float: left;
+  width: 20%;
+  background-color: red;
+}
+
+.sinopsisTitulo{
+  display: inline;
+  float: right;
+  width: 55%;
+  background-color: blue;
+
+}
+
+
+.contenedorExtra{
+  width: 100%;
+  background-color: blueviolet;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.selectPersonajes {
+ width: 50%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-evenly;
+ align-items: center;
+ align-content: flex-start;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(174, 97, 118);
+}
+
+
+.selectPersonajes img {
+  
+  width: 8rem;
+  margin-bottom: 1.5rem;
+}
+
+.selectLocaciones {
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: flex-start;
+   margin: 10px;
+   padding: 10px;
+   background-color: rgb(174, 97, 118);
+ }
+ 
+ 
+ .selectLocaciones img {
+   
+  width: 8rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.click{
+  background-color: rgb(27, 129, 193,0.5);
+  border-radius: 5px;
+  text-align: center;
+}
 
 .footer {
   position: fixed;
@@ -203,6 +328,8 @@ i {
   color: rgb(216, 211, 211);
   font-size: larger;
 }
+
+
 
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
