@@ -37,6 +37,7 @@ h3 {
   font-family: "Hind Vadodara", sans-serif;
   color: rgb(18, 85, 126);
   font-size: 1rem;
+  line-height : 1.8rem;
 
 }
 h4 {
@@ -52,13 +53,14 @@ h5{
   text-align: center;
   font-size: 0.8rem;
   letter-spacing: 0.2rem;
-  width: 60%;
+  width: 150px;
   font-weight: bolder;
 }
 
 #textoStudioGhibli {
   text-align: justify;
   margin: 40px;
+  line-height : 1.8rem;
 }
 
 
@@ -112,7 +114,7 @@ section {
 .home {
   align-items: center;
   appearance: button;
-  background-color: #0276FF;
+  background-color: rgb(27, 129, 193,0.7);
   border-radius: 8px;
   border-style: none;
   box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
@@ -186,6 +188,8 @@ section {
 #allFilms {
   display: flex;
   flex-wrap: wrap;
+  background-color: rgba(91, 143, 176, 0.2);
+  border-radius: 15px;
   }
 
 .peli {
@@ -232,75 +236,99 @@ section {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
- background-color: antiquewhite;
+  /* background-color: rgba(66, 105, 130, 0.1); */
   width: 90vw;
+  
 }
 
 .selectPeli{
   width: 100%;
-  background-color: yellow;
+  background-color: rgba(91, 143, 176, 0.2);
+  border-radius: 15px;
+  /* background-color: yellow; */
 }
 
 .sinopsisPoster{
   display: inline;
   float: left;
   width: 20%;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .sinopsisTitulo{
   display: inline;
   float: right;
   width: 55%;
-  background-color: blue;
+  line-height : 1.8rem;
+
+  /* background-color: blue; */
 
 }
 
 
 .contenedorExtra{
   width: 100%;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .selectPersonajes {
- width: 50%;
+ width: 65%;
  display: flex;
  flex-wrap: wrap;
  justify-content: space-evenly;
  align-items: center;
  align-content: flex-start;
-  margin: 10px;
+  margin: 15px;
   padding: 10px;
-  background-color: rgb(174, 97, 118);
+  background-color: rgba(91, 143, 176, 0.2);
+  border-radius: 15px;
+  /* background-color: rgb(174, 97, 118); */
 }
 
 
 .selectPersonajes img {
-  
-  width: 8rem;
+   width: 8rem;
   margin-bottom: 1.5rem;
 }
 
 .selectLocaciones {
-  width: 25%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-evenly;
   align-items: center;
   align-content: flex-start;
-   margin: 10px;
-   padding: 10px;
-   background-color: rgb(174, 97, 118);
+  margin: 10px;
+  padding: 10px;
+  /* background-color: orange; */
  }
  
  
  .selectLocaciones img {
-   
   width: 8rem;
   margin-bottom: 1.5rem;
+}
+
+.selectVehiculos{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: flex-start;
+  margin: 10px;
+  padding: 10px;
+  /* background-color: olivedrab; */
+
+}
+
+.subtitulos{
+  width: 100%;
 }
 
 
@@ -308,6 +336,18 @@ section {
   background-color: rgb(27, 129, 193,0.5);
   border-radius: 5px;
   text-align: center;
+}
+
+.contenedorColumna{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15px;
+  padding: 10px;
+  background-color: rgba(91, 143, 176, 0.2);
+  border-radius: 15px;
+  /* background-color: rgb(28, 152, 63); */
 }
 
 .footer {
