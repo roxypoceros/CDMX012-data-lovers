@@ -22,6 +22,7 @@ let todosFilms = films;
 //Imprime en el HTML la data de las 20 peliculas del Studio Ghibli
 const allFilms = document.getElementById("allFilms");
 allFilms.innerHTML = films.map(mostrarFilm).join(" ");
+redireccionMoreInfo()
 
 //Filtrado por director
 const filtrarDirector = document.querySelector("#filtrarDirector");
@@ -41,6 +42,7 @@ filtrarDirector.addEventListener("change", () => {
           <h3>${filtroDirectores(films, director)[i].release_date} </h3>
           </section>`;
     allFilms.innerHTML += peliDirectores;
+    redireccionMoreInfo()
   }
 });
 
@@ -62,6 +64,7 @@ filtrarProductor.addEventListener("change", () => {
           <h3>${filtroProductores(films, producer)[i].release_date} </h3>
           </section>`;
     allFilms.innerHTML += peliProductores;
+    redireccionMoreInfo()
   }
 });
 
@@ -81,6 +84,7 @@ filtrarFecha.addEventListener("change", () => {
           <h3>${filtroFecha(films, release_date)[i].release_date} </h3>
           </section>`;
     allFilms.innerHTML += peliFecha;
+    redireccionMoreInfo()
   }
 });
 
@@ -104,21 +108,24 @@ filtroAZ.addEventListener("change", () => {
 const inputBuscador = document.getElementById("inputBuscador");
 inputBuscador.addEventListener("keyup", () => {
   todosFilms = buscador(films, "title", inputBuscador.value);
-  allFilms.innerHTML = todosFilms.map(mostrarFilm).join(" ");
+  allFilms.innerHTML = todosFilms.map(mostrarFilm).join(" ")|| alert('To find your film, try with another word');
+  redireccionMoreInfo()
 });
 
 //Limpia pantalla
 let contenedorGeneralPeli = document.getElementById("contenedorGeneralPeli");
-const contenedorItemCarrusel = document.getElementById(
-  "contenedorItemCarrusel"
-);
+const contenedorItemCarrusel = document.getElementById("contenedorItemCarrusel");
 const textoStudioGhibli = document.getElementById("textoStudioGhibli");
 const seccionBuscador = document.getElementById("seccionBuscador");
 const seccionFiltrado = document.getElementById("seccionFiltrado");
+//const contenedorGrafica = document.querySelector(".contenedorGrafica");
 
-document.querySelectorAll(".peli").forEach((el) => {
+function redireccionMoreInfo(){
+document.querySelectorAll(".click").forEach((el) => {
   el.addEventListener("click", (e) => {
+    console.log(e.target.id)
     const id = e.target.getAttribute("id");
+
 
     contenedorItemCarrusel.style.display = "none";
     contenedorGeneralPeli.style.display = "flex";
@@ -126,6 +133,8 @@ document.querySelectorAll(".peli").forEach((el) => {
     seccionBuscador.style.display = "none";
     textoStudioGhibli.style.display = "none";
     seccionFiltrado.style.display = "none";
+    seccionFiltrado.style.display = "none";
+    //contenedorGrafica.style.display = "none";
 
     //Muestra en pantalla sinopsis
     const selectPeli = document.getElementById("selectPeli");
@@ -151,10 +160,10 @@ document.querySelectorAll(".peli").forEach((el) => {
       console.table(nuevaGente);
       for (let i = 0; i < nuevaGente.length; i++) {
         let peliPersonajes = `<section id="${id}" >
-      <img src="${nuevaGente[i].img}" class="posterPeli">
-      <h2>Name: ${nuevaGente[i].name}</h2>
-      <h2>Gender: ${nuevaGente[i].gender}</h2>
-      <h2>Age: ${nuevaGente[i].age}</h2>
+      <center><img src="${nuevaGente[i].img}" class="posterPeli"></center>
+      <h3>Name:</h3><h2> ${nuevaGente[i].name}</h2>
+      <h3>Gender:</h3><h2> ${nuevaGente[i].gender}</h2>
+      <h3>Age:</h3><h2> ${nuevaGente[i].age}</h2>
       </section>`;
         selectPersonajes.innerHTML += peliPersonajes;
       }
@@ -164,7 +173,7 @@ document.querySelectorAll(".peli").forEach((el) => {
       let nuevaLocacion = peliActual.locations;
       for (let i = 0; i < nuevaLocacion.length; i++) {
         let peliLocacion = `<section id="${id}" >
-      <img src="${nuevaLocacion[i].img}" class="posterPeli">
+        <center><img src="${nuevaLocacion[i].img}" class="posterPeli"></center>
       <h2> ${nuevaLocacion[i].name}</h2>
       </section>`;
         selectLocaciones.innerHTML += peliLocacion;
@@ -175,7 +184,7 @@ document.querySelectorAll(".peli").forEach((el) => {
       let nuevoVehiculo = peliActual.vehicles;
       for (let i = 0; i < nuevoVehiculo.length; i++) {
         let peliVehiculo = `<section id="${id}">
-      <img src="${nuevoVehiculo[i].img}" class="posterPeli">
+        <center><img src="${nuevoVehiculo[i].img}" class="posterPeli"></center>
       <h2> ${nuevoVehiculo[i].name}</h2>
       </section>`;
         selectVehiculos.innerHTML += peliVehiculo;
@@ -183,17 +192,23 @@ document.querySelectorAll(".peli").forEach((el) => {
     }
   });
 });
-
-//Graficar
-const grafica = document.querySelector('#myChart');
-const graficaTop = (films,rt_score) => {
-   const arrayTop= films.sort((film1, film2) => ((film1.rt_score > film2.rt_score) ? 1 : -1));
-   console.table(arrayTop) 
-  if(rt_score == '90-100'){
-     return arrayTop;
-    }
 }
 
+
+
+
+//Graficar
+/* const grafica = document.querySelector('#myChart');
+const graficaTop = (films,rt_score) => {
+   const arrayTop= films.sort((film1, film2) => ((film1.rt_score > film2.rt_score) ? 1 : -1));
+  if(rt_score >= '90' && rt_score <= '100'){
+   console.log(arrayTop) 
+
+   return arrayTop;
+
+    }
+}
+ */
 /* const myChart = new Chart(ctx, {
   type: 'bar',
   data: {
