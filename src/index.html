@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="”viewport”"
-      content="”width"
-      ="device-width,"
-      initial-scale="1.0″"
-    />
-    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
-    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <meta charset="utf-8"/>
+    <!-- <meta name="”viewport”" content="”width" = "device-width,"initial-scale="1.0″"/>  -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg"/>
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
     <!-- FontAwNan -->
     <script
       src="https://kit.fontawesome.com/2aba56147e.js"
@@ -136,7 +131,9 @@
     
     <section id="seccionBuscador" class="seccionBuscador"> 
       <input type="search" id="inputBuscador" class="inputBuscador" placeholder="Search for your favorite film" /> 
-      <!-- <input type="button" value="top10" id="top"> -->
+     <!-- Boton de Gráfica -->
+      <a href="#" class="graficaBoton">Top10</a>
+
     </section>
    
 
@@ -201,39 +198,21 @@
     <section id="allFilms"></section>
 
 
-    <!-- <style>
-      .chart{
-        width: 40%;
- 
-      }
- 
-      .contenedorGraficas{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
- 
-      }
- 
- 
- 
-     </style>
- 
- 
-     <section  style="display: none" class="contenedorGrafica"> 
-     <section class="chart"> 
-       <h2>Top10</h2>
-       <canvas id="myChart" width="400" height="400"></canvas>
-     </section>
-     </section> -->
-     <!-- Graficas -->
-
-     
     
+    <section tclass="contenedorGrafica" >
+      <h2>The 10 Best Films of Ghibli's Universe</h2>
+    <div class="chart">
+      <canvas id="myChart" width="400" height="400"></canvas>
+    
+    </div>
+    </section>
+    
+    
+     
 
     <!-- Área para mostrar información de pelicula -->
     <section style="display: none" id="contenedorGeneralPeli">
-      <input class="home" type=button onClick="parent.location='index.html'"
-      value= 'Home'>
+      <input class="home" type="button" onClick="parent.location='index.html'" value= "Home">
     <section id="selectPeli" class="selectPeli"></section>
     <section class="contenedorExtra">
     <section id="selectPersonajes" class="selectPersonajes">
@@ -266,7 +245,7 @@
         <a class="gitHubLogo" href="https://github.com/roxypoceros"
           ><i class="fa-brands fa-github"></i
         ></a>
-        & Nanci Mondragón
+         Nanci Mondragón
         <a class="gitHubLogo" href="https://github.com/NanciMondragon"
           ><i class="fa-brands fa-github"></i>
         </a>
