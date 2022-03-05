@@ -195,7 +195,7 @@ document.querySelectorAll(".click").forEach((el) => {
 
 
 //Graficar Top10
-/* let filmsTop = [];
+let filmsTop = [];
 //console.log(filmsTop);
  
 const variablesTop =["Only Yesterday", "The Tale of the Princess Kaguya", "Grave of the Fireflies",
@@ -264,6 +264,6 @@ graficaBoton.addEventListener("click", () => {
   
   allFilms.innerHTML += cargarFuncion(contenedorGrafica);
   });
- */
+
 
 

@@ -1,23 +1,34 @@
-import { example, anotherExample } from '../src/data.js';
+import { filtroDirectores, mostrarFilm } from "../src/data.js";
+import { data} from "../src/data/ghibli/ghibli.js";
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+describe('Todas las peliculas en pantalla', () => {
+  it('Comprobar que es una función', () => {
+    expect(typeof mostrarFilm).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+  describe('filtroDirectores', () => {
+    it('Comprobar que es una función', () => {
+      expect(typeof filtroDirectores).toBe('function');
+    });
+
 });
-
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    let director = [
+      {
+        director: 'Hayao Miyazaki',
+      },
+      {
+        director: 'Isao Takahata',
+      },
+      {
+        director: 'Yoshifumi Kondō',
+      },
+    ];
+    
+      describe('filtro por director', () => {
+      test('Filtro Directores', () => {
+        expect  (data.array (filtroDirectores('Hayao Miyazaki', director).length).toStrictEqual(director));
+      
+      });
+    });
   });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
