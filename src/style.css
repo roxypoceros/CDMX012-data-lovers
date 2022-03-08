@@ -297,27 +297,7 @@ width: 95%;
   margin: 15px;
   border-radius: 15px;
 }
-/* .graficaBoton{
-  font-family: "Catamaran", sans-serif;
-  display: inline-block;
-  text-decoration: none;
-  background: #87befd;
-  color: #FFF;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  border-radius: 50%;
-  text-align: center;
-  vertical-align: middle;
-  overflow: hidden;
-  box-shadow: 0px 0px 0px 5px #87befd;
-  border: dashed 1px #FFF;
-  transition: .4s;
-}
-.graficaBotonx:hover{
-  background: #668ad8;
-   box-shadow: 0px 0px 0px 5px #668ad8;
-} */
+
 .chart{
   width: 70%;
 }
@@ -422,9 +402,5 @@ i {
         width: 30%;
         }
       
-/*       .graficaBoton{
-  
-        width: 80px;
-        height: 80px;
-    } */
+
   }

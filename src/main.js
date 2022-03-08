@@ -264,6 +264,7 @@ const myChart = new Chart(grafica, {
 graficaBoton.addEventListener("click", () => {
   allFilms.innerHTML = "";
   
+  
   allFilms.innerHTML += cargarFuncion(contenedorGrafica);
   }); */
 
