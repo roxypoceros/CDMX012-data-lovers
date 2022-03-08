@@ -1,118 +1,97 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Hind+Vadodara&family=Wendy+One&display=swap");
-/*Selector Universal*/
+/*rgb(18, 85, 126) letras
+rgb(43, 156, 226) header
+*/
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
-
 header {
   background-color: rgb(43, 156, 226);
+  width: 100%;
   height: 120px;
   display: flex; /*como se va a mostrar*/
   align-items: center; /*centrado de forma vertical*/
-  gap: 30%; /*espacio entre el logo y el texto*/
+  gap: 15%; /*espacio entre el logo y el texto*/
 }
-
 #logo {
   width: auto;
   height: 120px;
 }
-
 h1 {
   font-family: "Wendy One", sans-serif;
   color: white;
-  font-size: 3rem;
-  letter-spacing: 0.2rem; /*espacio entre las letras*/
+  font-size: 3em;
+  letter-spacing: 0.2em; /*espacio entre las letras*/
 }
-
 h2 {
   font-family: "Catamaran", sans-serif;
   text-align: center;
-  font-size: 1.7rem;
+  font-size: 1.7em;
   color: rgb(18, 85, 126);
 }
-
 h3 {
   font-family: "Hind Vadodara", sans-serif;
   color: rgb(18, 85, 126);
-  font-size: 1rem;
-
+  font-size: 1em;
+  line-height : 1.8em;
 }
 h4 {
   font-family: "Hind Vadodara", sans-serif;
   text-align: center;
-  font-size: 0.8rem;
-  letter-spacing: 0.2rem;
+  font-size: 1.3em;
+  letter-spacing: 0.2em;
 }
-
 h5{
   font-family: "Hind Vadodara", sans-serif;
   margin: 10px;
   text-align: center;
-  font-size: 0.8rem;
-  letter-spacing: 0.2rem;
-  width: 60%;
-  font-weight: bolder;
+  font-size: 2em;
+  letter-spacing: 0.2em;
+  width: 240px; /* CHECAR EL ANCHO DE MORE INFO  */
 }
-
 #textoStudioGhibli {
   text-align: justify;
   margin: 40px;
+  line-height : 1.8em;
 }
-
-
-/*Span contiene filtros*/
-/*rgb(18, 85, 126) header
-rgb(18, 85, 126) letras
-*/
-
 section {
   margin: 40px;
   text-align: center;
 }
-
 /* Estilo de selectores */
-.selectores{
-  font-family: "Hind Vadodara", sans-serif;
-  font-size: 1rem;
-  width: 20%;
-  margin: 5px;
-  padding: 5px;
-  background: rgb(27, 129, 193,0.7);
-  color: none - none - none
-  border: none;
-  cursor:pointer;
-}
-
-.filtroZA{
-  font-family: "Hind Vadodara", sans-serif;
-  font-size: 1rem;
-  width: 20%;
-  margin: 5px;
-  padding: 5px;
-  background: rgb(27, 129, 193,0.7);
-  color: none - none - none
-  border: none;
-  cursor: pointer;
-}
-
-
-
-.selectores-content{
+/* .selectores-content{
   display:none ;
   position: absolute;
-  background-color: #bce0f6;
-  min-width: 160px;
+  background-color: red;
+  max-width: 50%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-}
-
-
+} */
+.selectores{
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 1.4em;
+  color: rgb(18, 85, 126);
+  width: 80%;
+  margin: 10px;
+  padding: 5px 17%;
+  background: rgb(27, 129, 193,0.7);
+  }
+.filtroZA{
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 1.4em;
+  color: rgb(18, 85, 126);
+  width: 80%;
+  margin: 10px;
+  padding: 5px 17%;
+  background: rgb(27, 129, 193,0.7);
+ }
+/* BOTON */
 .home {
   align-items: center;
   appearance: button;
-  background-color: #0276FF;
+  background-color: rgb(27, 129, 193,0.7);
   border-radius: 8px;
   border-style: none;
   box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
@@ -123,7 +102,7 @@ section {
   flex-direction: row;
   flex-shrink: 0;
   font-family: "Hind Vadodara", sans-serif;
-  font-size: 100%;
+  font-size: 1.7rem;
   line-height: 1.15;
   margin: 0;
   padding: 10px 21px;
@@ -133,30 +112,23 @@ section {
   user-select: none;
   touch-action: manipulation;
 }
-
 .home:active {
   background-color: #006AE8;
 }
-
 .home:hover {
   background-color: #1C84FF;
 }
-
 /*Carrusel*/
 #contenedorItemCarrusel {
-  /*Su alto es el de los elementos que contiene*/
   height: 400px;
-  margin: 30px;
+  margin: 40px;
   text-align: center;
   overflow: hidden;
 }
-
 .itemCarrusel {
-  /*Tarjeta y flechas heredarán la altura*/
   position: relative;
   height: 100%;
 }
-
 .tarjetaCarrusel {
   height: 100%;
   width: 100%;
@@ -165,9 +137,7 @@ section {
 .flechasCarrusel {
   width: 100%;
   height: 100%;
-  /*Absolute toma como referencia el elemento posicionado más cercano non-static(puede ser el padre)*/
   position: absolute;
-  /*Top en relación a la posición de .itemCarrusel */
   top: 0;
   display: flex;
   align-items: center;
@@ -175,139 +145,170 @@ section {
   padding: 5%;
   height: 100%;
 }
-
 .flechasCarrusel > i {
   text-decoration: none;
   color: rgb(216, 211, 211);
   font-size: 2rem;
   text-shadow: 3px 3px 1px gray;
 }
-
 #allFilms {
   display: flex;
   flex-wrap: wrap;
+  background-color: rgba(91, 143, 176, 0.2);
+  border-radius: 15px;
   }
-
 .peli {
-  flex: 1 0 20%;  text-align: center;
+  flex: 1 0 40%;  text-align: center;
   margin: 30px;
   padding: 10px;
   color: rgb(18, 85, 126);
-  
+ 
 }
-
 .peli > img{
   border-radius: 15px;
   filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
-  
+  margin-bottom: 10px;
 }
-
-.poster{
+/* .poster{
   border-radius: 15px;
   filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
-}
-
+  margin-bottom: 10px;
+} */
 .seccionBuscador{
-  align-items: center;
-  text-align: center;
-
+  gap: 8%;
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: space-around;
 }
-
 .inputBuscador{
-  width: 30%;
-  height: 2rem;
+  width: 65%;
+  height: 50px;
   padding: 5px;
   border-radius: 5px;
   border: 1.5px solid rgb(43, 156, 226);
+  font-size: 1.4rem;
 }
-
-
-.posterPeli {
+/* .posterPeli {
   display: flex;
   border-radius: 15px;
   filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
-}
-
+} */
 #contenedorGeneralPeli{
   display: flex;
   flex-wrap: wrap;
   text-align: center;
- background-color: antiquewhite;
   width: 90vw;
-}
-
+  }
 .selectPeli{
   width: 100%;
-  background-color: yellow;
+  background-color: rgba(91, 143, 176, 0.2);
+  border-radius: 15px;
+  padding: 10px;
 }
-
 .sinopsisPoster{
   display: inline;
   float: left;
   width: 20%;
-  background-color: red;
 }
-
 .sinopsisTitulo{
   display: inline;
   float: right;
   width: 55%;
-  background-color: blue;
-
-}
-
-
+  line-height : 1.8rem;
+  text-align: justify;
+  }
 .contenedorExtra{
   width: 100%;
-  background-color: blueviolet;
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
 }
-
 .selectPersonajes {
- width: 50%;
+ width: 100%;
  display: flex;
  flex-wrap: wrap;
  justify-content: space-evenly;
  align-items: center;
  align-content: flex-start;
-  margin: 10px;
-  padding: 10px;
-  background-color: rgb(174, 97, 118);
+ margin: 15px;
+ background-color: rgba(91, 143, 176, 0.2);
+ border-radius: 15px;
 }
-
-
 .selectPersonajes img {
-  
-  width: 8rem;
-  margin-bottom: 1.5rem;
+  width: 120px;
+  margin-bottom: 10px;
+  border: solid #8fcbf0;
+  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
+  border-radius: 15px;
 }
-
 .selectLocaciones {
-  width: 25%;
+width: 95%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-evenly;
+ align-items: center;
+ align-content: flex-start;
+ background-color: rgba(91, 143, 176, 0.2);
+ border-radius: 15px;
+ }
+ .selectLocaciones img {
+  width: 120px;
+  margin-bottom: 10px;
+  border: solid #8fcbf0;
+  border-radius: 15px;
+  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
+}
+.selectVehiculos{
+  width: 95%;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
   justify-content: space-evenly;
   align-items: center;
   align-content: flex-start;
-   margin: 10px;
-   padding: 10px;
-   background-color: rgb(174, 97, 118);
- }
- 
- 
- .selectLocaciones img {
-   
-  width: 8rem;
-  margin-bottom: 1.5rem;
+  padding: 0 80 0 0;
+  background-color: rgba(91, 143, 176, 0.2);
+  border-radius: 15px;
 }
-
-
+.selectVehiculos img {
+  width: 120px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: solid #8fcbf0;
+  border-radius: 15px;
+  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
+}
+.subtitulos{
+  width: 100%;
+}
 .click{
   background-color: rgb(27, 129, 193,0.5);
   border-radius: 5px;
   text-align: center;
+}
+.contenedorColumna{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  margin: 15px;
+  border-radius: 15px;
+}
+
+.chart{
+  width: 70%;
+}
+
+.contenedorGrafica{
+  background-color: rgba(91, 143, 176, 0.2);
+  border-radius: 15px;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+
 }
 
 .footer {
@@ -322,27 +323,84 @@ section {
   align-items: center;
   padding: 1%;
 }
-
 i {
   text-decoration: none;
-  color: rgb(216, 211, 211);
-  font-size: larger;
+  color: rgb(255, 255, 255);
 }
+/* VERSION PARA ESCRITORIO */
+    @media only screen and (min-width: 768px) {
+    
+      h5{
+        margin: 10px;
+        text-align: center;
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+        width: 160px;
+      }
+      .selectores{
+        font-size: 1rem;
+        width: 20%;
+        margin: 5px;
+        padding: 5px;
+      }
+      .filtroZA{
+        font-size: 1rem;
+        width: 20%;
+        margin: 5px;
+        padding: 5px;
+      }
+      .home {
+        font-size: 100%;
+        }
+    
+        .peli {
+          flex: 1 0 20%;  text-align: center;
+        }
+        .seccionBuscador{
+          gap: 10%;
+                 
+        }
+        
+        .inputBuscador{
+          width: 30%;
+          height: 32px;
+        }
+        .contenedorExtra{
+          width: 100%;
+    
+        }
+        .selectPersonajes {
+          width: 65%;
+         
+         }
+         .selectPersonajes img {
+          width: 8rem;
+         margin-bottom: 1.5rem;
+       }
+       .selectLocaciones {
+        width: 100%;
+        align-items: flex-start;
+        margin: 10px;
+        padding: 10px;
+       }
+       .selectLocaciones img {
+        width: 8rem;
+        margin-bottom: 1.5rem;
+      }
+      .selectVehiculos{
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+      
+      }
+      .selectVehiculos img {
+        width: 8rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .contenedorColumna{
+        width: 30%;
+        }
+      
 
-
-
-@media only screen and (max-width: 620px) {
-  /* For mobile phones: */
-  .peli,
-  #contenedorItemCarrusel,
-  #allFilms {
-    width: 100%;
   }
-}
-
-/*For screen The width is 100%, when the viewport is 800px or smaller 
-@media screen and (max-width: 800px) {
-  #contenedorItemCarrusel, #allFilms, #TextoStudioGhibli, .footer {
-    width: 100%;  
-  }
-}*/

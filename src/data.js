@@ -2,7 +2,7 @@
 //manipulacion del DOM template string
 export let mostrarFilm = (film) => {
   return `<section class = "peli"> 
-  <center><h5><div id="${film.id}" class="click">More info</div></h5></center>
+          <center><h5><div id="${film.id}" class="click">More info</div></h5></center>
           <img src="${film.poster}" class="poster">
           <h2> ${film.title}</h2>
           <h3>Director: ${film.director}</h3>
@@ -45,10 +45,10 @@ export const ordenarAlfabeticamente = (films, orden) => {
 //Buscador
 export const buscador = (films, condition, value) => {
   //console.log(value);
-  return films.filter(elemento => elemento[condition].toLowerCase().includes(value.toLowerCase()));
+  return films.filter(film => film[condition].toLowerCase().includes(value.toLowerCase()));
 }
 
-//Trae sinopsis de peliculas por ID n
+//Trae sinopsis de peliculas por ID
 export let visualizarPeli = (films, id) => {
   const arrayId = films.filter((film) => film.id == id);  
   return arrayId;

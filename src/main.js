@@ -11,7 +11,6 @@ import { filtroFecha } from "./data.js";
 import { ordenarAlfabeticamente } from "./data.js";
 import { buscador } from "./data.js";
 import { visualizarPeli } from "./data.js";
-//import { visualizarPersonaje } from "./data.js";
 
 const films = data.films;
 let director = "";
@@ -22,6 +21,7 @@ let todosFilms = films;
 //Imprime en el HTML la data de las 20 peliculas del Studio Ghibli
 const allFilms = document.getElementById("allFilms");
 allFilms.innerHTML = films.map(mostrarFilm).join(" ");
+redireccionMoreInfo()
 
 //Filtrado por director
 const filtrarDirector = document.querySelector("#filtrarDirector");
@@ -41,6 +41,7 @@ filtrarDirector.addEventListener("change", () => {
           <h3>${filtroDirectores(films, director)[i].release_date} </h3>
           </section>`;
     allFilms.innerHTML += peliDirectores;
+    redireccionMoreInfo()
   }
 });
 
@@ -62,6 +63,7 @@ filtrarProductor.addEventListener("change", () => {
           <h3>${filtroProductores(films, producer)[i].release_date} </h3>
           </section>`;
     allFilms.innerHTML += peliProductores;
+    redireccionMoreInfo()
   }
 });
 
@@ -81,6 +83,7 @@ filtrarFecha.addEventListener("change", () => {
           <h3>${filtroFecha(films, release_date)[i].release_date} </h3>
           </section>`;
     allFilms.innerHTML += peliFecha;
+    redireccionMoreInfo()
   }
 });
 
@@ -104,21 +107,24 @@ filtroAZ.addEventListener("change", () => {
 const inputBuscador = document.getElementById("inputBuscador");
 inputBuscador.addEventListener("keyup", () => {
   todosFilms = buscador(films, "title", inputBuscador.value);
-  allFilms.innerHTML = todosFilms.map(mostrarFilm).join(" ");
+  allFilms.innerHTML = todosFilms.map(mostrarFilm).join(" ")|| alert('To find your film, try with another word');
+  redireccionMoreInfo()
 });
 
 //Limpia pantalla
 let contenedorGeneralPeli = document.getElementById("contenedorGeneralPeli");
-const contenedorItemCarrusel = document.getElementById(
-  "contenedorItemCarrusel"
-);
+const contenedorItemCarrusel = document.getElementById("contenedorItemCarrusel");
 const textoStudioGhibli = document.getElementById("textoStudioGhibli");
 const seccionBuscador = document.getElementById("seccionBuscador");
 const seccionFiltrado = document.getElementById("seccionFiltrado");
+const contenedorGrafica = document.querySelector(".contenedorGrafica");
 
-document.querySelectorAll(".peli").forEach((el) => {
+function redireccionMoreInfo(){
+document.querySelectorAll(".click").forEach((el) => {
   el.addEventListener("click", (e) => {
+    //console.log(e.target.id)
     const id = e.target.getAttribute("id");
+
 
     contenedorItemCarrusel.style.display = "none";
     contenedorGeneralPeli.style.display = "flex";
@@ -126,6 +132,8 @@ document.querySelectorAll(".peli").forEach((el) => {
     seccionBuscador.style.display = "none";
     textoStudioGhibli.style.display = "none";
     seccionFiltrado.style.display = "none";
+    seccionFiltrado.style.display = "none";
+    contenedorGrafica.style.display = "none";
 
     //Muestra en pantalla sinopsis
     const selectPeli = document.getElementById("selectPeli");
@@ -148,7 +156,6 @@ document.querySelectorAll(".peli").forEach((el) => {
       //Muestra en pantalla personajes
       const selectPersonajes = document.getElementById("selectPersonajes");
       let nuevaGente = peliActual.people;//Te toma la posision de la pelicula y el arreglo de personajes 
-      console.table(nuevaGente);
       for (let i = 0; i < nuevaGente.length; i++) {
         let peliPersonajes = `<section id="${id}" >
       <center><img src="${nuevaGente[i].img}" class="posterPeli"></center>
@@ -183,49 +190,83 @@ document.querySelectorAll(".peli").forEach((el) => {
     }
   });
 });
-
-//Graficar
-const grafica = document.querySelector('#myChart');
-const graficaTop = (films,rt_score) => {
-   const arrayTop= films.sort((film1, film2) => ((film1.rt_score > film2.rt_score) ? 1 : -1));
-   console.table(arrayTop) 
-  if(rt_score == '90-100'){
-     return arrayTop;
-    }
 }
 
-/* const myChart = new Chart(ctx, {
+
+
+//Graficar Top10
+let filmsTop = [];
+//console.log(filmsTop);
+ 
+const variablesTop =["Only Yesterday","The Tale of the Princess Kaguya", "Grave of the Fireflies",
+"Spirited Away","Kiki's Delivery Service","Castle in the Sky","The Secret World of Arrietty",
+"Porco Rosso","My Neighbor Totoro","Princess Mononoke"]
+const grafica = document.querySelector('#myChart')
+cargarFuncion()
+
+function elegirTopTen(){
+  filmsTop = films
+  .filter((film) => film.rt_score >= 90)
+  .sort((film1, film2) => film2.rt_score - film1.rt_score)
+  .slice(0, 10);
+  //console.table(filmsTop)
+  return filmsTop
+}
+function cargarFuncion(){
+const myChart = new Chart(grafica, {
   type: 'bar',
   data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: variablesTop,
       datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
+          label: 'Top 10',
+          data: elegirTopTen().map(film=> film.rt_score),
           backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
+            '#061e2d',
+            '#0c3c5a',
+            '#125a87',
+            '#1878b4',
+            '#1f96e0',
+            '#35a1e3',
+            '#62b6ea',
+            '#8fcbf0',
+            '#bce0f6',
+            '#e9f5fc'
           ],
+          
           borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
+                'rgba(191, 191, 191, 1)',
+                'rgba(89, 89, 89, 1)',
+                'rgba(191, 191, 191, 1)',
+                'rgba(89, 89, 89, 1)',
+                'rgba(191, 191, 191, 1)',
+                'rgba(89, 89, 89, 1)',
+                'rgba(191, 191, 191, 1)',
+                'rgba(89, 89, 89, 1)',
+                'rgba(191, 191, 191, 1)',
+                'rgba(89, 89, 89, 1)'
           ],
           borderWidth: 1
       }]
   },
   options: {
+    
       scales: {
           y: {
-              beginAtZero: true
+              beginAtZero: false
           }
       }
+      
   }
 });
- */
+}
+
+/* const graficaBoton = document.querySelector(".graficaBoton");
+graficaBoton.addEventListener("click", () => {
+  allFilms.innerHTML = "";
+  
+  
+  allFilms.innerHTML += cargarFuncion(contenedorGrafica);
+  }); */
+
+
+
