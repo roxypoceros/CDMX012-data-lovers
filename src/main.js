@@ -198,7 +198,7 @@ document.querySelectorAll(".click").forEach((el) => {
 let filmsTop = [];
 //console.log(filmsTop);
  
-const variablesTop =["Only Yesterday", "The Tale of the Princess Kaguya", "Grave of the Fireflies",
+const variablesTop =["Only Yesterday","The Tale of the Princess Kaguya", "Grave of the Fireflies",
 "Spirited Away","Kiki's Delivery Service","Castle in the Sky","The Secret World of Arrietty",
 "Porco Rosso","My Neighbor Totoro","Princess Mononoke"]
 const grafica = document.querySelector('#myChart')
@@ -218,7 +218,7 @@ const myChart = new Chart(grafica, {
   data: {
       labels: variablesTop,
       datasets: [{
-          label: '',
+          label: 'Top 10',
           data: elegirTopTen().map(film=> film.rt_score),
           backgroundColor: [
             '#061e2d',
@@ -249,21 +249,23 @@ const myChart = new Chart(grafica, {
       }]
   },
   options: {
+    
       scales: {
           y: {
-              beginAtZero: true
+              beginAtZero: false
           }
       }
+      
   }
 });
 }
 
-const graficaBoton = document.querySelector(".graficaBoton");
+/* const graficaBoton = document.querySelector(".graficaBoton");
 graficaBoton.addEventListener("click", () => {
   allFilms.innerHTML = "";
   
   allFilms.innerHTML += cargarFuncion(contenedorGrafica);
-  });
+  }); */
 
 
 
