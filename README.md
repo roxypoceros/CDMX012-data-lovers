@@ -88,17 +88,17 @@ Los criterios que consideramos para desarrollar este proyecto son:
 Para este proyecto generamos dos historia de usuario
 HU1 "Yo como usuario quiero visualizar las películas del Studio Ghibli para conocer sus nombres y 
 posters de cada película" 
-![Historia de Usuario1](/imgreadme/HU1.png)
+![Historia de Usuario1](src/imgreadme/HU1.png)
 
 HU2 "Yo como usuario quiero conocer los personajes de las películas para entender su rol"
-![Historia de Usuario1](/imgreadme/HU2.png)
+![Historia de Usuario1](src/imgreadme/HU2.png)
 
 ### Diseño de la Interfaz de Usuario
 
 #### Prototipo de baja fidelidad
 Tomamos foto de los diseños que prentendimos realizar a papel y lápiz.
-![Boceto Nan](/imgreadme/bocetonan.png)
-![Boceto Rox](/imgreadme/bocetorox.png)
+![Boceto Nan](src/imgreadme/bocetonan.png)
+![Boceto Rox](src/imgreadme/bocetorox.png)
 
 
 #### Prototipo de alta fidelidad
@@ -107,24 +107,24 @@ diseño visual
 [Figma](https://www.figma.com/file/mUfLVQ3ShK9n7oGL1s8MyG/Data-Lover-Studio-Ghibli?node-id=0%3A1) 
 
 Esta es la _ideal_ de nuestra solución.
-![Prototipo](/imgreadme/Figma.png) 
+![Prototipo](src/imgreadme/Figma.png) 
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 1. Muestra la data en la interfaz.
 2. Permitir al seguidor interactuar para obtener la infomación que necesita.
 3. Es _responsive_, se visualiza sin problemas en: móviles y desktops.
-![Interfaz](/imgreadme/InterfazFilms.png)
-![Film](/imgreadme/interfazfilm.png)
+![Interfaz](src/imgreadme/InterfazFilms.png)
+![Film](src/imgreadme/interfazfilm.png)
 
 
 ### Pruebas unitarias
 Se realizarón  Pruebas Unitarias de lasfunciones escritas en data.js 
-![Pruebas Unitarias](/imgreadme/TestUnitarios.png) 
+![Pruebas Unitarias](src/imgreadme/TestUnitarios.png) 
 
 ## 5. Hacker edition
 Se realizaron cálculos para obtener el TOP10 de las películas de Studio Ghibli, 
 la gráfica se hizo con la ayuda de la libreria Chart.js 
-![Grafica](/imgreadme/Grafica.png)
+![Grafica](src/imgreadme/Grafica.png)
 
 ## 6. Consideraciones técnicas
 La lógica del proyecto se implementó completamente en JavaScript
@@ -133,7 +133,7 @@ La lógica del proyecto se implementó completamente en JavaScript
 #### Herramientas Github Colaborativo
 Se realizó GitHub Colaborativo donde  2 autores (Roxana Hdz & Nanci Mondragón) enviaron 22 confirmaciones a main y 22 confirmaciones
 a todas las sucursales. En main, 24 archivos han cambiado y ha habido 15.098 adiciones y 50 eliminaciones .  
-![GitHub Colaborativo](/imgreadme/GithubColaborativo.png)
+![GitHub Colaborativo](src/imgreadme/GithubColaborativo.png)
 
 Data Lovers Copyright 2022 by Roxana Hernández & Nanci Mondragón 
 
