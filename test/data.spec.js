@@ -1,11 +1,12 @@
+import { it } from 'eslint/lib/rule-tester/rule-tester';
 import { filtroDirectores, 
           mostrarFilm,
           filtroProductores,
           filtroFecha,
           ordenarAlfabeticamente,
           visualizarPeli,
-          buscador } from "../src/data.js";
-//import data from "../src/data/ghibli/ghibli.js";
+          buscador } from '../src/data.js';
+//import data from '../src/data/ghibli/ghibli.js';
 
 
 
@@ -13,6 +14,25 @@ describe('Todas las peliculas en pantalla', () => {
   it('Comprobar que es una función', () => {
     expect(typeof mostrarFilm).toBe('function');
   });
+
+  let films= [
+    {
+      id: '2baf70d1-42bb-4437-b551-e5fed5a87abe',
+      title: 'Castle in the Sky',
+      director: 'Hayao Miyazaki',
+      producer: 'Isao Takahata',
+      poster: 'https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg',
+      release_date: '1986',
+    },
+    
+  ];  
+    describe('Filtro para mostrar films', () => {
+    test('Filtro Mostrar en pantalla films', () => {
+      expect (mostrarFilm (films))
+      
+    });
+});
+
 
   describe('filtroDirectores', () => {
     it('Comprobar que es una función', () => {
@@ -39,7 +59,6 @@ describe('Todas las peliculas en pantalla', () => {
       } )
 
     });
-  });
 
   let producer = [
     {
@@ -63,10 +82,10 @@ describe('Todas las peliculas en pantalla', () => {
 
   let  release_date = [
     {
-      release_date: "1986",
+      release_date: '1986',
     },
     {
-      release_date: "1994",
+      release_date: '1994',
     },
     
   ];
@@ -84,16 +103,16 @@ describe('Todas las peliculas en pantalla', () => {
   
   
     describe('Filtro por Orden Alfabetico', () => {
-    it('Filtro A-Z', () => {
+    test('Filtro A-Z', () => {
       const orden1 = [{'title': 'Castle in the Sky'}, {'title': 'My Neighbor Totoro'},{'title': 'Grave of the Fireflies'}];
       const orden2 = [{'title': 'Castle in the Sky'}, {'title': 'Grave of the Fireflies'}, {'title': 'My Neighbor Totoro'}];
-    expect(ordenarAlfabeticamente(orden1)).toStrictEqual(orden2);
+    expect(ordenarAlfabeticamente(orden1,'Castle in the Sky')).toStrictEqual(orden2, 'Castle in the Sky');
      
     });
-    it('Filtro Z-A', () => {
+    test('Filtro Z-A', () => {
       const orden1 = [{'title': 'Castle in the Sky'}, {'title': 'My Neighbor Totoro'},{'title': 'Porco Rosso'}];
       const orden2 = [{'title': 'Porco Rosso'}, {'title': 'My Neighbor Totoro'}, {'title': 'Castle in the Sky' }];
-    expect(ordenarAlfabeticamente(orden2)).toEqual(orden1);
+    expect(ordenarAlfabeticamente(orden2, 'Porco Rosso')).toEqual(orden1, 'Porco Rosso');
     });
   });
 
@@ -121,7 +140,7 @@ describe('Todas las peliculas en pantalla', () => {
       expect(typeof buscador).toBe('function');
     });
 
-    let  title = [
+    let  films = [
       {
         title: 'My Neighbor Totoro',
       },
@@ -131,8 +150,7 @@ describe('Todas las peliculas en pantalla', () => {
       
     ];
     it('totoro busqueda tot', () => {
-      expect (buscador (title, 'My Neighbor Totoro').toLowerCase()).toEqual([{ title: 'tot'.includes(value.toLowerCase())}])
-    })
-  });
-
-    
+      expect(buscador(films, 'title','Totoro')).toEqual([{title:'My Neighbor Totoro'}])
+    });
+});
+});

@@ -43,9 +43,9 @@ export const ordenarAlfabeticamente = (films, orden) => {
 };
 
 //Buscador
-export const buscador = (films, condition, value) => {
+export const buscador = (films, propiedad, value) => {
   //console.log(value);
-  return films.filter(film => film[condition].toLowerCase().includes(value.toLowerCase()));
+  return films.filter(film => film[propiedad].toLowerCase().includes(value.toLowerCase()));
 }
 
 //Trae sinopsis de peliculas por ID
