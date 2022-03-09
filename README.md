@@ -134,3 +134,6 @@ La lógica del proyecto se implementó completamente en JavaScript
 Se realizó GitHub Colaborativo donde  2 autores (Roxana Hdz & Nanci Mondragón) enviaron 22 confirmaciones a main y 22 confirmaciones
 a todas las sucursales. En main, 24 archivos han cambiado y ha habido 15.098 adiciones y 50 eliminaciones .  
 ![GitHub Colaborativo](/imgreadme/GithubColaborativo.png)
+
+Data Lovers Copyright 2022 by Roxana Hernández & Nanci Mondragón 
+
