@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Hind+Vadodara&family=Wendy+One&display=swap");
-/*rgb(18, 85, 126) letras
-rgb(43, 156, 226) header
-*/
+
 * {
   padding: 0px;
   margin: 0px;
@@ -40,7 +38,7 @@ h3 {
 h4 {
   font-family: "Hind Vadodara", sans-serif;
   text-align: center;
-  font-size: 1.3em;
+  font-size: .9em;
   letter-spacing: 0.2em;
 }
 h5{
@@ -60,15 +58,7 @@ section {
   margin: 40px;
   text-align: center;
 }
-/* Estilo de selectores */
-/* .selectores-content{
-  display:none ;
-  position: absolute;
-  background-color: red;
-  max-width: 50%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-} */
+
 .selectores{
   font-family: "Hind Vadodara", sans-serif;
   font-size: 1.4em;
@@ -169,11 +159,7 @@ section {
   filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
   margin-bottom: 10px;
 }
-/* .poster{
-  border-radius: 15px;
-  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
-  margin-bottom: 10px;
-} */
+
 .seccionBuscador{
   gap: 8%;
   display: flex;
@@ -191,11 +177,7 @@ section {
   border: 1.5px solid rgb(43, 156, 226);
   font-size: 1.4rem;
 }
-/* .posterPeli {
-  display: flex;
-  border-radius: 15px;
-  filter: drop-shadow(14px 14px 4px rgba(27, 129, 193, 0.5));
-} */
+
 #contenedorGeneralPeli{
   display: flex;
   flex-wrap: wrap;

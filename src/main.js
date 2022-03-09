@@ -259,14 +259,3 @@ const myChart = new Chart(grafica, {
   }
 });
 }
-
-/* const graficaBoton = document.querySelector(".graficaBoton");
-graficaBoton.addEventListener("click", () => {
-  allFilms.innerHTML = "";
-  
-  
-  allFilms.innerHTML += cargarFuncion(contenedorGrafica);
-  }); */
-
-
-
